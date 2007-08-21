@@ -33,7 +33,7 @@ Qt4 frontend for recordmydesktop tool.
 
 desktop-file-install --vendor='' \
 	--dir=%buildroot%_datadir/applications \
-	--add-category='Video' \
+	--add-category='Video;Qt' \
 	--add-only-show-in='KDE' \
 	%buildroot%_datadir/applications/*.desktop
 

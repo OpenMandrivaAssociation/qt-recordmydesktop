@@ -9,6 +9,7 @@ License:	GPL
 Group:		Video
 URL:		http://recordmydesktop.sourceforge.net
 Source0:	http://downloads.sourceforge.net/recordmydesktop/%{name}-%{version}.tar.bz2
+BuildRequires:	desktop-file-utils ImageMagick
 BuildRequires:	python-qt4
 BuildRequires:	qt4-devel >= 4.2
 %py_requires -d
@@ -29,13 +30,27 @@ Qt4 frontend for recordmydesktop tool.
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 %makeinstall_std
+
+desktop-file-install --vendor='' \
+	--dir=%buildroot%_datadir/applications \
+	--add-category='Video' \
+	--add-only-show-in='KDE' \
+	%buildroot%_datadir/applications/*.desktop
+
+mkdir -p %buildroot%_iconsdir/hicolor/{16x16,32x32,48x48}/hicolor/apps
+convert src/%{name}.svg -resize 16x16 %buildroot%_iconsdir/hicolor/16x16/hicolor/apps/%{name}.png
+convert src/%{name}.svg -resize 32x32 %buildroot%_iconsdir/hicolor/32x32/hicolor/apps/%{name}.png
+convert src/%{name}.svg -resize 48x48 %buildroot%_iconsdir/hicolor/48x48/hicolor/apps/%{name}.png
+
 %find_lang %{qtoname}
 
 %post
 %update_menus
+%update_icon_cache hicolor
 
 %postun
 %clean_menus
+%clean_icon_cache hicolor
 
 %clean
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
@@ -47,3 +62,4 @@ Qt4 frontend for recordmydesktop tool.
 %{py_sitedir}/qt_%{oname}/
 %{_datadir}/applications/*.desktop
 %{_datadir}/pixmaps/*.png
+%{_iconsdir}/hicolor/*/hicolor/apps/*.png

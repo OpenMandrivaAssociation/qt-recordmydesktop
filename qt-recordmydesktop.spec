@@ -1,7 +1,7 @@
 %define oname recordMyDesktop
 %define	qtoname qt-%{oname}
 
-Summary:	Qt4 fronted for recordmydesktop
+Summary:	Qt4 frontend for recordmydesktop
 Name:		qt-recordmydesktop
 Version:	0.3.6
 Release:	%mkrel 3

@@ -41,7 +41,7 @@ desktop-file-install --vendor='' \
 	--add-only-show-in='KDE' \
 	%buildroot%_datadir/applications/*.desktop
 
-mkdir -p %buildroot%_iconsdir/hicolor/{16x16,32x32,48x48,scalable}/apps
+mkdir -p %buildroot%_iconsdir/hicolor/{16x16,32x32,48x48,64x64,scalable}/apps
 convert src/%{name}.png -scale 16 %buildroot%_iconsdir/hicolor/16x16/apps/%{name}.png
 convert src/%{name}.png -scale 32 %buildroot%_iconsdir/hicolor/32x32/apps/%{name}.png
 convert src/%{name}.png -scale 48 %buildroot%_iconsdir/hicolor/48x48/apps/%{name}.png

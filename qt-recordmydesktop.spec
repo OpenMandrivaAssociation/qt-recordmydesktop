@@ -9,6 +9,7 @@ License:	GPLv2+
 Group:		Video
 URL:		http://recordmydesktop.sourceforge.net
 Source0:	http://downloads.sourceforge.net/recordmydesktop/%{name}-%{version}.tar.bz2
+Patch0:		qt-recordmydesktop-0.3.6-desktop-file-icon.patch
 BuildRequires:	desktop-file-utils 
 BuildRequires:	ImageMagick
 BuildRequires:	python-qt4
@@ -24,6 +25,7 @@ Qt4 frontend for recordmydesktop tool.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %configure2_5x

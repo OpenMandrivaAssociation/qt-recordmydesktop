@@ -18,7 +18,6 @@ BuildRequires:	qt4-devel >= 4.2
 Requires:	recordmydesktop	>= %{version}
 Requires:	python-qt4-gui
 Requires:	python-sip
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Qt4 frontend for recordmydesktop tool.

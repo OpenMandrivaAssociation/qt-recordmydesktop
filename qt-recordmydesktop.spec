@@ -32,6 +32,9 @@ Qt4 frontend for recordmydesktop tool.
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 %makeinstall_std
 
+#(tpg) drop icon extension
+sed -i -e 's/^Icon=%{name}.png$/Icon=%{name}/g' %{buildroot}%{_datadir}/applications/*
+
 desktop-file-install \
 	--add-category='Video;Qt' \
 	--add-only-show-in='KDE' \
@@ -45,8 +48,7 @@ convert src/%{name}.png -scale 48 %{buildroot}%{_iconsdir}/hicolor/48x48/apps/%{
 install -m 644 src/%{name}.png %{buildroot}%{_iconsdir}/hicolor/64x64/apps/%{name}.png
 install -m 644 src/%{name}.svg %{buildroot}%{_iconsdir}/hicolor/scalable/apps/%{name}.svg
 
-#(tpg) drop icon extension
-sed -i -e 's/^Icon=%{name}.png$/Icon=%{name}/g' %{buildroot}%{_datadir}/applications/*
+
 
 %find_lang %{qtoname}
 

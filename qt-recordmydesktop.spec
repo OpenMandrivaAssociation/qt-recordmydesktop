@@ -3,8 +3,8 @@
 
 Summary:	Qt4 frontend for recordmydesktop
 Name:		qt-recordmydesktop
-Version:	0.3.7.2
-Release:	%mkrel 4
+Version:	0.3.8
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Video
 URL:		http://recordmydesktop.sourceforge.net
@@ -72,5 +72,5 @@ install -m 644 src/%{name}.svg %{buildroot}%{_iconsdir}/hicolor/scalable/apps/%{
 %attr(755,root,root) %{_bindir}/*
 %{py_sitedir}/qt_%{oname}/
 %{_datadir}/applications/*.desktop
-%{_datadir}/pixmaps/*.png
+%{_datadir}/pixmaps/*.*g
 %{_iconsdir}/hicolor/*/apps/*

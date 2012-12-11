@@ -74,3 +74,68 @@ install -m 644 src/%{name}.svg %{buildroot}%{_iconsdir}/hicolor/scalable/apps/%{
 %{_datadir}/applications/*.desktop
 %{_datadir}/pixmaps/*.*g
 %{_iconsdir}/hicolor/*/apps/*
+
+
+%changelog
+* Thu Nov 04 2010 Funda Wang <fwang@mandriva.org> 0.3.8-3mdv2011.0
++ Revision: 593100
+- rebuild for py 2.7
+
+* Fri Jan 02 2009 Funda Wang <fwang@mandriva.org> 0.3.8-2mdv2011.0
++ Revision: 323383
+- rebuild
+
+* Mon Nov 24 2008 Tomasz Pawel Gajc <tpg@mandriva.org> 0.3.8-1mdv2009.1
++ Revision: 306402
+- update to new version 0.3.8
+
+* Fri Aug 01 2008 Thierry Vignaud <tv@mandriva.org> 0.3.7.2-4mdv2009.0
++ Revision: 259982
+- rebuild
+
+* Fri Jul 25 2008 Thierry Vignaud <tv@mandriva.org> 0.3.7.2-3mdv2009.0
++ Revision: 247790
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+
+* Thu Feb 21 2008 Tomasz Pawel Gajc <tpg@mandriva.org> 0.3.7.2-1mdv2008.1
++ Revision: 173743
+- new version
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Tue Dec 18 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 0.3.7-1mdv2008.1
++ Revision: 131924
+- new version
+- drop patch0, handle this with sed
+- spec file clean
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Thu Sep 13 2007 Funda Wang <fwang@mandriva.org> 0.3.6-3mdv2008.0
++ Revision: 84874
+- fix desktop icon ext
+
+  + Adam Williamson <awilliamson@mandriva.org>
+    - correct spelling error in summary
+    - don't package COPYING
+    - icon fixes: install to correct directories, convert from png not svg (imagemagick does not convert from svg to png well), install 64x64 and svg icons as well
+    - requires python-sip (#33426)
+    - Fedora license policy
+
+* Tue Aug 21 2007 Funda Wang <fwang@mandriva.org> 0.3.6-2mdv2008.0
++ Revision: 68191
+- Add Qt category
+- use hicolor icon theme
+- complete spec file
+- cp spec file from gtk frontend
+- Created package structure for qt-recordmydesktop.
+
+  + Tomasz Pawel Gajc <tpg@mandriva.org>
+    - new version
+    - rework spec file
+

@@ -4,24 +4,34 @@
 Summary:	Qt4 frontend for recordmydesktop
 Name:		qt-recordmydesktop
 Version:	0.3.8
-Release:	4
+Release:	6
 License:	GPLv2+
 Group:		Video
-URL:		http://recordmydesktop.sourceforge.net
+Url:		http://recordmydesktop.sourceforge.net
 Source0:	http://downloads.sourceforge.net/recordmydesktop/%{name}-%{version}.tar.bz2
 Source1:	qt-recordmydesktop_ru-0.3.8.po
 BuildRequires:	desktop-file-utils
 BuildRequires:	imagemagick
 BuildRequires:	python-qt4
 BuildRequires:	qt4-devel
-%py_requires -d
+BuildRequires:	pkgconfig(python)
 Requires:	recordmydesktop >= %{version}
 Requires:	python-qt4-gui
-Requires:	python-sip
+Requires:	sip-api(%{sip_api_major}) = %{sip_api}
 BuildArch:	noarch
 
 %description
 Qt4 frontend for recordmydesktop tool.
+
+%files -f %{qtoname}.lang
+%doc AUTHORS ChangeLog README
+%attr(755,root,root) %{_bindir}/*
+%{py_sitedir}/qt_%{oname}/
+%{_datadir}/applications/*.desktop
+%{_datadir}/pixmaps/*.*g
+%{_iconsdir}/hicolor/*/apps/*
+
+#----------------------------------------------------------------------------
 
 %prep
 %setup -q
@@ -51,13 +61,4 @@ install -m 644 src/%{name}.png %{buildroot}%{_iconsdir}/hicolor/64x64/apps/%{nam
 install -m 644 src/%{name}.svg %{buildroot}%{_iconsdir}/hicolor/scalable/apps/%{name}.svg
 
 %find_lang %{qtoname}
-
-%files -f %{qtoname}.lang
-%doc AUTHORS ChangeLog README
-%attr(755,root,root) %{_bindir}/*
-%{py_sitedir}/qt_%{oname}/
-%{_datadir}/applications/*.desktop
-%{_datadir}/pixmaps/*.*g
-%{_iconsdir}/hicolor/*/apps/*
-
 

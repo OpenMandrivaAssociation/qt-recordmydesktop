@@ -4,7 +4,7 @@
 Summary:	Qt4 frontend for recordmydesktop
 Name:		qt-recordmydesktop
 Version:	0.3.8
-Release:	6
+Release:	7
 License:	GPLv2+
 Group:		Video
 Url:		http://recordmydesktop.sourceforge.net

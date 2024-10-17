@@ -7,7 +7,7 @@ Version:	0.3.8
 Release:	8
 License:	GPLv2+
 Group:		Video
-Url:		http://recordmydesktop.sourceforge.net
+Url:		https://recordmydesktop.sourceforge.net
 Source0:	http://downloads.sourceforge.net/recordmydesktop/%{name}-%{version}.tar.bz2
 Source1:	qt-recordmydesktop_ru-0.3.8.po
 BuildRequires:	desktop-file-utils
